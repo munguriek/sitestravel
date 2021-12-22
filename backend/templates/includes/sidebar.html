@@ -1,0 +1,95 @@
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+    <div class="x_blog_right_side_wrapper float_left">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jp_rightside_job_categories_wrapper jp_rightside_job_categories_wrapper2">
+                    <div class="jp_rightside_job_categories_heading">
+                        <h4>Menu</h4>
+                    </div>
+                    <div class="jp_rightside_job_categories_content">
+                        <ul>
+                            {% if request.user.is_staff %}
+                            <li>
+                                <i class="fas fa-tachometer-alt"></i>
+                                </i>&nbsp;&nbsp;<a href="{% url 'main' %}">Overview</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-pen-fancy"></i>
+                                <a href="{% url 'update_index' %}"> &nbsp;&nbsp;Homepage</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-hourglass-half"></i>
+                                </i>&nbsp;&nbsp;<a href="{% url 'bookings' %}">Bookings</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-suitcase-rolling"></i>    
+                                </i>&nbsp;&nbsp;<a href="{% url 'trips' %}">Trips</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-plane-arrival"></i>
+                                <a href="{% url 'flights' %}"> &nbsp;&nbsp; Flights  </a>
+                            </li>
+                            <li>
+                                <i class="fas fa-car"></i>
+                                <a href="{% url 'cars' %}"> &nbsp;&nbsp;Cars</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-users"></i>
+                                <a href="{% url 'users' %}"> &nbsp;&nbsp;Users</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-cog"></i>
+                                <a href="{% url 'drivers' %}"> &nbsp;&nbsp;Drivers</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-photo-video"></i>
+                                <a href="{% url 'pictures' %}"> &nbsp;&nbsp;Pictures</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-blog"></i>
+                                <a href="{% url 'post_list' %}"> &nbsp;&nbsp;Blog</a>
+                            </li>
+                            <hr>
+                            
+                            {% comment %}
+                            <li>
+                                <i class="fas fa-sliders-h"></i>
+                                <a href="{% url 'trip_categories' %}"> &nbsp;&nbsp;Trip categories</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-sliders-h"></i>
+                                <a href="{% url 'accomodations' %}"> &nbsp;&nbsp;Accomodations</a>
+                            </li>
+                            {% endcomment %}
+                            <li>
+                                <i class="fas fa-sliders-h"></i>
+                                <a href="{% url 'settings' %}"> &nbsp;&nbsp;Settings</a>
+                            </li>
+                            {% elif request.user.is_driver %}
+                            <li>
+                                <i class="fas fa-hourglass-half"></i>
+                                </i>&nbsp;&nbsp;<a href="{% url 'bookings' %}">Bookings</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-suitcase-rolling"></i>    
+                                </i>&nbsp;&nbsp;<a href="{% url 'trips' %}">Trips</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-car"></i>
+                                <a href="{% url 'cars' %}"> &nbsp;&nbsp;Cars</a>
+                            </li>
+                            {% elif not request.user.is_staff or not request.user.is_driver %}
+                            <li>
+                                <i class="fas fa-hourglass-half"></i>
+                                </i>&nbsp;&nbsp;<a href="{% url 'my_bookings' %}">My bookings</a>
+                            </li>
+                            {% endif %}
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

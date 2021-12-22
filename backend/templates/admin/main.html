@@ -1,0 +1,160 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+<!-- hs Navigation End -->
+<!-- btc tittle Wrapper Start -->
+<div class="btc_tittle_main_wrapper">
+	<div class="btc_tittle_img_overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_left_heading">
+					<h1>Dashboard</h1>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_right_heading">
+					<div class="btc_tittle_right_cont_wrapper">
+						<ul>
+							<li>
+								<a href="{% url 'index' %}">Home</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>
+								{% if request.user.is_admin %}
+								Admin's Dashboard
+								{% elif request.user.is_driver %}
+								Driver's Dashboard
+								{% endif %}	
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- btc tittle Wrapper End -->
+
+
+<!-- x car book sidebar section Wrapper Start -->
+<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+	<div class="container">
+		<div class="row">
+			<!-- sidebar -->
+			{% include 'includes/sidebar.html' %}
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+				<div class="x_carbooking_right_section_wrapper float_left">
+					<div class="row">
+						<div class="col-12 col-md-8 offset-md-3">
+							<p class="text-center">
+								{% include 'includes/messages.html' %}
+							</p>
+						</div>
+						<div class="x_services_title_main_wrapper float_left padding_tb_10">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+											<h4>Website summary</h4>
+											<h3>Dashboard</h3>
+											<!-- <p>Dashboard and Management console for Site Travel website</p> -->
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="x_car_acc_bottom_button float_left">
+											{% if latest_booking %}
+											<p><i class="fa fa-info-circle"></i> {{latest_booking.full_name |title }} booked a {{latest_booking.service}}  {{latest_booking.time_booked |timesince }}</p>
+											{% else %}
+											<p><i class="fa fa-info-circle"></i> No booking has been made yet. </p>										
+											{% endif %}
+											<!-- <p>
+												<i class="fa fa-info-circle"></i> 2 Bookings starting Today
+										 		<span class="mx-4 px-5"><i class="fa fa-info-circle "></i> 1  Bookings starting Tomorrow</span>  
+											</p> -->
+										</div>
+									</div>
+
+									{% if request.user.is_staff %}
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">
+											<h3><a href="#">Bookings</a></h3>
+											<p>
+												Trips: {{ trips }}  <br>
+												Flights: {{ flights }} <br>
+												Car-hires {{carhire}}
+											</p>
+										</div>
+									</div>
+									{% else %}
+									{{empty}}
+									{% endif %}
+
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">	
+											<!-- <i class="flaticon-shopping-bag"></i> -->
+											<h3><a href="#">Trips</a></h3>
+											<p>
+												Availabe trips: {{seen_trips}} <br>
+												Non availabe trips: {{unseen_trips}}
+											</p>
+										</div>
+									</div>
+									{% if request.user.is_staff %}
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">	
+											<h3><a href="#">Accomodation </a></h3>
+											<p>
+												budget	: {{ accom_budget }} <br>
+												mid-range: {{ accom_mid_range }} <br>
+												up-market: {{ accom_up_market }}
+											</p>
+										</div>
+									</div>
+									{% else %}
+									{{empty}}
+									{% endif %}
+									
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">
+											<h3><a href="#">Driver</a></h3>
+											<p>
+												Driver: {{ carhire_driver }}  <br>
+												Self: {{ carhire_self }} <br>
+											</p>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">
+											<h3><a href="#">Car hired within</a></h3>
+											<p>
+												Town: {{ carhire_town }} <br>
+												Upcountry: {{ carhire_upcountry }}
+											</p>
+										</div>
+									</div>
+									
+									{% if request.user.is_staff %}
+									<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+										<div class="x_slider_bottom_box_wrapper x_service_inner_main_box">
+											<h3><a href="#">Blog</a></h3>
+											<p>Draft: {{draft}} <br>
+												Published: {{published}} </p>
+										</div>
+									</div>
+									{% else %}
+									{{empty}}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- x car book sidebar section Wrapper End -->
+
+{% endblock %}

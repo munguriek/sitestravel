@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    	<!-- btc tittle Wrapper Start -->
+	<div class="btc_tittle_main_wrapper">
+		<div class="btc_tittle_img_overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_left_heading">
+						<h1>Group Trips </h1>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_right_heading">
+						<div class="btc_tittle_right_cont_wrapper">
+							<ul>
+								<li><a href="{% url 'index' %}">Home</a>  <i class="fa fa-angle-right text-white"></i></li>
+								<li>Group Packages</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- btc tittle Wrapper End -->
+
+	<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="x_carbooking_right_section_wrapper float_left">
+						<div class="row">
+							<div class="x_services_title_main_wrapper float_left padding_tb_10">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+												<h4>Group trips</h4>
+												<h3>Trips</h3>
+												<!-- <p>Dashboard and Management console for Site Travel website</p> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Package title -->
+							<div class="col-md-12 my-4">
+								<div class="card">
+									<h5 class="card-header">Trip Details</h5>
+									<div class="card-body">
+									  <h5 class="card-title">Special title treatment</h5>
+									  <p class="card-text">Number of slots: {{ trip.slots }}</p>
+									</div>
+								  </div>
+							</div>
+							
+							<!-- card body-->
+							<div class="col-md-12 my-4">
+								<div class="card">
+									<h5 class="card-header">Trip Booking</h5>
+									<div class="card-body">
+
+									<!-- Start multiStep Form -->
+									<form id="msform" action="{% url 'stepsave' %}" method="POST">
+									{% csrf_token %}
+										<!-- progressbar -->
+										<ul id="progressbar">
+											<li class="active">Personal Details</li>
+											<li>Social Profiles</li>
+											<li>Account Setup</li>
+										</ul>
+										<!-- fieldsets -->
+										<fieldset>
+										<div class="col-12 col-md-8 offset-md-2">
+											<p class="text-center">
+												{% include 'includes/messages.html' %}
+											</p>
+										</div>
+											<h2 class="fs-title">Personal Details</h2>
+											<h3 class="fs-subtitle">Tell us something more about you</h3>
+											<input type="text" name="full_name" placeholder="Full Name"/>
+											<input type="text" name="email" placeholder="Email"/>
+											<input type="text" name="telephone" placeholder="Telephone"/>
+											<input type="text" name="country" placeholder="Country"/>
+											<input type="button" name="next" class="next action-button" value="Next"/>
+										</fieldset>
+										<fieldset>
+											<h2 class="fs-title">Trip details</h2>
+											<h3 class="fs-subtitle">Your presence on the social network</h3>
+											<input type="text" name="pickup" placeholder="Pickup"/>
+											<input type="text" name="dropoff" placeholder="Dropoff"/>
+											<input type="text" name="start" placeholder="Start"/>
+											<input type="text" name="end" placeholder="End"/>
+											<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+											<input type="button" name="next" class="next action-button" value="Next"/>
+										</fieldset>
+										<fieldset>
+											<h2 class="fs-title">More trip details</h2>
+											<h3 class="fs-subtitle">Fill in your credentials</h3>
+											<input type="text" name="slots" placeholder="Number of slots"/>
+											<input type="text" name="driven_by" placeholder="Driven by"/>
+											<input type="text" name="carhire_trip" placeholder="carhire trip"/>
+											<input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+											<input type="submit" name="submit" class="submit action-button" value="submit"/>
+										</fieldset>
+									</form>
+									<!-- End multiStep Form -->
+
+									</div>
+								  </div>
+							</div>
+	
+							<!-- <div class="col-md-12">
+								<div class="x_car_acc_bottom_button float_left">
+									<p>
+										<i class="fa fa-info-circle"></i> &nbsp;Phasellus ornare, ante
+										vitae consectetuer consequat, purus sapien ultricies dolor.
+									</p>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
+    

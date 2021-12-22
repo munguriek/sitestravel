@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    	<!-- btc tittle Wrapper Start -->
+	<div class="btc_tittle_main_wrapper">
+		<div class="btc_tittle_img_overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_left_heading">
+						<h1>Flight Bookings </h1>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_right_heading">
+						<div class="btc_tittle_right_cont_wrapper">
+							<ul>
+								<li><a href="{% url 'index' %}">Home</a>  <i class="fa fa-angle-right text-white"></i></li>
+								<li>Book Flights</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- btc tittle Wrapper End -->
+
+	<!-- xs offer car tabs Start -->
+	<div class="x_inner_team_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-3">
+                    <p class="text-center">{% include 'includes/messages.html' %}</p>
+                </div>
+				<div class="col-md-12">
+					<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+						<h4>What we offer</h4>
+						<h3>Flight Ticketing</h3>
+						<p>We help you book flights.</p>
+					</div>
+				</div>
+				
+				{% if flights  %}
+				{% for flight in flights %}
+				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+					<div class="btc_team_bot_cont_main_wrapper">
+						<div class="btc_team_img_bot_wrapper">
+							{% if flight.image %}
+							<img src="{{flight.image.url}}" style="width: 255px; height: 210px;" alt="flight image">
+							{% else %}
+							<img src="{% static 'images/tb1.jpg' %}" style="width: 255px; height: 210px;" alt="flight image">
+							{% endif %}
+							<!-- <div class="btc_team_social_tb_wrapper">
+								<h3>{{flight.start}} slot left</h3>
+							</div> -->
+						</div>
+						<div class="btc_team_img_bot_cont_wrapper">
+							<h4><a href="#">{{flight.start.name |title }} - {{flight.destination.name |title }}</a></h4>
+							<p>$ {{flight.price |intcomma }}</p>
+							
+							{% if request.user.is_authenticated %}
+							<a href="{% url 'flight_detail' flight.id %}" class="btn btn-outline-primary btn-sm mt-2">Book</a>
+							{% else %}
+							<a href="{% url 'account_login' %}" class="btn btn-outline-primary btn-sm mt-2">Book</a>
+							{% endif %}
+
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% else %}
+					<p class="mx-auto">No flights yet</p>	
+				{% endif %}
+					
+
+			</div>
+		</div>
+	</div>
+	<!-- xs offer car tabs Start -->
+
+{% endblock content %}
+    
