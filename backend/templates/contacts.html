@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
     	<!-- btc tittle Wrapper Start -->
@@ -73,12 +74,13 @@
 
 			
 				<!-- modal form -->
+				<div class="my-form">
 			<form method="post" enctype='multipart/form-data'>
 				{% csrf_token %}
 				{{ contact_form |crispy }}
 				<div class="float-right">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-success">Save</button>
+					<button type="button" class="btn btn-secondary" class="close-btn" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-success" class="save-btn" >Save</button>
 				</div>
 			</form>
 					
@@ -86,6 +88,7 @@
 			
 			<!-- my form -->
 			{% comment %}
+			
 			<form method="post">
 				{% csrf_token %}
 				<div class="form-row">
@@ -100,6 +103,7 @@
 				{{ contact_form.message|as_crispy_field }}
 				<button type="submit" class="btn btn-primary">Sign in</button>
 			  </form>
+			</div>
 			{% endcomment %}
 
 

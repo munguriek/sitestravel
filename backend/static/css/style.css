@@ -1097,10 +1097,12 @@ ul {
 .slider-area .carousel-inner .carousel-item .caption-1 {
     width: 100%;
     height: 100%;
+    /* background-color: #000000; */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background: url(../images/header/photos-1.jpg) 50% 0 repeat-y;
+    background: url(../images/header/photos-6.jpg);
+    /* background: url(../images/header/photos-1.jpg) 50% 0 repeat-y; */
     position: relative;
     min-height: 800px;
 }
@@ -1119,10 +1121,11 @@ ul {
 .slider-area .carousel-inner .carousel-item .caption-3 {
     width: 100%;
     height: 100%;
-    background-position: center;
+    /* background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background: url(../images/header/photos-3.jpg);
+    background: url(../images/header/photos-3.jpg); */
+    background-color: #000000;
     position: relative;
     min-height: 800px;
 }
@@ -1196,7 +1199,7 @@ ul {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #000044;
+    background: #78c157;
     color: #ffffff;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
@@ -1206,7 +1209,8 @@ ul {
 
 .slider-area .carousel-inner .carousel-item .carousel-captions .content li:first-child a:hover {
     background: #ffffff;
-    color: #111111;
+    color: #78c157;
+    border: 1px solid #78c157;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1219,8 +1223,8 @@ ul {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #ffffff;
-    color: #111111;
+    background: #fbb03b;
+    color: #ffffff;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1228,8 +1232,8 @@ ul {
 }
 
 .slider-area .carousel-inner .carousel-item .carousel-captions .content li:last-child a:hover {
-    background: #000044;
-    color: #ffffff;
+    background: #ffffff;
+    color: #fbb03b;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1495,7 +1499,7 @@ ul {
 }
 
 .x_slider_form_heading_wrapper {
-    background: #000044;
+    background: #78c157;
     width: 320px;
     position: absolute;
     top: 20px;
@@ -1509,7 +1513,7 @@ ul {
     position: absolute;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-left: 21px solid #000044;
+    border-left: 21px solid #78c157;
     right: -21px;
     top: 0px;
 }
@@ -1518,7 +1522,7 @@ ul {
     content: '';
     position: absolute;
     border-bottom: 17px solid transparent;
-    border-right: 19px solid #414bb9;
+    border-right: 19px solid #78c157;
     left: 0;
     bottom: -17px;
 }
@@ -1850,6 +1854,22 @@ html .ui-button.ui-state-disabled:active {
     display: none !important;
 }
 
+.my-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000044;
+
+    
+}
+
+.close-btn{
+    background-color: #ffb939;
+}
+.save-btn{
+    background-color: #ffb939;
+}
+
 .form-sec-header h3 {
     font-size: 14px;
     font-weight: 800;
@@ -2006,7 +2026,7 @@ html .ui-button.ui-state-disabled:active {
     height: 50px;
     line-height: 45px;
     text-align: center;
-    background: #000044;
+    background: #fcb939;
     color: #ffffff;
     border: 1px solid transparent;
     text-transform: uppercase;
@@ -2024,9 +2044,9 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .x_slider_checout_right li a:hover {
-    background: transparent;
-    border: 1px solid #000044;
-    color: #000044;
+    background: #cf1e25;
+    /* border: 1px solid #78c157; */
+    color: #ffffff;
 }
 
 /*-- hs Slider End --*/
@@ -2038,7 +2058,7 @@ html .ui-button.ui-state-disabled:active {
     padding: 40px;
     padding-left: 70px;
     padding-right: 15px;
-    border-left: 1px solid #eeeeee;
+    border-left: 1px solid #78c157;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -3921,19 +3941,20 @@ html .ui-button.ui-state-disabled:active {
     width: 100%;
     height: 100%;
     position: relative;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .btc_tittle_img_overlay {
     position: absolute;
-    top: 0%;
-    bottom: 0%;
+    /* top: 0%; */
+    /* bottom: 0%;
     left: 0%;
-    right: 0%;
+    right: 0%; */
     /* background: rgba(0, 0, 0, 0.6); */
     /* background: rgba(25, 25, 112, 1); */
-    background: rgba(0, 0, 68, 1);
+    /* background: rgba(0, 0, 68, 1); */
+    
 }
 
 .btc_tittle_left_heading {
@@ -3944,9 +3965,9 @@ html .ui-button.ui-state-disabled:active {
 .btc_tittle_left_heading h1 {
     font-size: 30px;
     font-weight: 800;
-    color: #ffffff;
+    color: rgba(0, 0, 68, 1);
     text-transform: uppercase;
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 .btc_tittle_right_heading {
@@ -3955,7 +3976,8 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .btc_tittle_right_cont_wrapper ul {
-    background: rgba(255, 255, 255, 0.12);
+    /* background: rgba(255, 255, 255, 0.12); */
+    background: rgba(0, 0, 68, 1);
     float: right;
     padding: 15px 30px 15px 30px;
     -webkit-border-radius: 5px;
@@ -3972,7 +3994,7 @@ html .ui-button.ui-state-disabled:active {
 .btc_tittle_right_cont_wrapper li i {
     position: relative;
     left: 10px;
-    color: #000044;
+    color: #ffffff;
 }
 
 .btc_tittle_right_cont_wrapper li:first-child {
@@ -3989,7 +4011,7 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .btc_tittle_right_cont_wrapper li a:hover {
-    color: #000044;
+    color: #fcb939;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     -ms-transition: all 0.5s;
@@ -3998,10 +4020,10 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .btc_tittle_right_cont_wrapper li:last-child {
-    color: #fff;
+    color: #ffffff;
 }
 .angle-white{
-    color: #fff;
+    color: #ffffff;
 }
 
 .x_title_inner_num_wrapper {
