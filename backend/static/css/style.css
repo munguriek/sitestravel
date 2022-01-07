@@ -1121,10 +1121,10 @@ ul {
 .slider-area .carousel-inner .carousel-item .caption-3 {
     width: 100%;
     height: 100%;
-    /* background-position: center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background: url(../images/header/photos-3.jpg); */
+    background: url(../images/header/photos-3.jpg);
     background-color: #000000;
     position: relative;
     min-height: 800px;
@@ -2074,6 +2074,7 @@ html .ui-button.ui-state-disabled:active {
     -ms-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .x_slider_bottom_box_wrapper h3 {
@@ -6491,6 +6492,7 @@ input[type=number] {
 .x_contact_title_icon {
     float: left;
     width: 40px;
+    
 }
 
 .x_contact_title_icon_cont {
@@ -6542,12 +6544,14 @@ input[type=number] {
     font-size: 18px;
     font-weight: 600px;
     display: inline-block;
+    
 }
 
 .x_contact_title_icon_cont h3 a {
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
+    color: #4f5de7;
 }
 
 .x_contact_title_icon_cont p {
