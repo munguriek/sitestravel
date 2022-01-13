@@ -10,7 +10,9 @@
 			<div class="row">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
 					<div class="btc_tittle_left_heading">
-						<h1>Our Services</h1>
+						<h1>Contact Us</h1>
+						<!-- <h4>get in touch</h4> -->
+						<p>Please do not hesistate to reach us. </p>
 					</div>
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
@@ -32,15 +34,19 @@
 	<!-- xs offer car tabs Start -->
 	<div class="x_contact_title_main_wrapper float_left padding_tb_100">
 		<div class="container">
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-md-12">
 					<div class="x_offer_car_heading_wrapper x_offer_car_heading_wrapper_contact float_left">
-						<h4>get in touch</h4>
-						<h3>Contact Info</h3>
-						<p>Please do not hesistate to reach us. </p>
-					</div>
-				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+						<!- <h4>get in touch</h4> -->
+						<!-- <h3>Contact Info</h3> -->
+						<!-- <p>Please do not hesistate to reach us. </p> -->
+					<!-- </div> -->
+				<!-- </div> -->
+			<!-- </div> --> 
+			<div class="contact_body">
+				<div class=""contact_divs>
+				<!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width"> -->
+				<div class="col-md-12">
 					<div class="x_contact_title_icon_cont_main_box">
 						<div class="x_contact_title_icon">	<i class="fa fa-map-marker"></i>
 						</div>
@@ -50,7 +56,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+				<!-- </div> -->
+				<!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width"> -->
+				<div class="col-md-12">
 					<div class="x_contact_title_icon_cont_main_box">
 						<div class="x_contact_title_icon">	<i class="flaticon-phone-call"></i>
 						</div>
@@ -60,7 +68,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+				<!-- </div> -->
+				<!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width"> -->
+				<div class="col-md-12">
 					<div class="x_contact_title_icon_cont_main_box">
 						<div class="x_contact_title_icon">	<i class="flaticon-mail-send"></i>
 						</div>
@@ -70,39 +80,41 @@
 						</div>
 					</div>
 				</div>
-			</div>
+				<!-- </div> -->
+				</div>
 
 			
 				<!-- modal form -->
-				<div class="my-form">
-			<form method="post" enctype='multipart/form-data'>
-				{% csrf_token %}
-				{{ contact_form |crispy }}
-				<div class="float-right">
-					<button type="button" class="btn btn-secondary" class="close-btn" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-success" class="save-btn" >Save</button>
-				</div>
-			</form>
+			<div class="my-form">
+				<form method="post" enctype='multipart/form-data'>
+					{% csrf_token %}
+					{{ contact_form |crispy }}
+					<div class="float-right">
+						<button type="button" class="btn btn-secondary" class="close-btn" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-success" class="save-btn" >Save</button>
+					</div>
+				</form>
 					
 			
 			
-			<!-- my form -->
-			{% comment %}
+				<!-- my form -->
+				{% comment %}
 			
-			<form method="post">
-				{% csrf_token %}
-				<div class="form-row">
-					<div class="form-group col-md-6 mb-0">
-						{{ contact_form.full_name|as_crispy_field }}
-					  </div>
-				  <div class="form-group col-md-6 mb-0">
-					{{ contact_form.email|as_crispy_field }}
-				  </div>
-				</div>
-				{{ contact_form.telephone|as_crispy_field }}
-				{{ contact_form.message|as_crispy_field }}
-				<button type="submit" class="btn btn-primary">Sign in</button>
-			  </form>
+				<form method="post">
+					{% csrf_token %}
+					<div class="form-row">
+						<div class="form-group col-md-6 mb-0">
+							{{ contact_form.full_name|as_crispy_field }}
+					 	</div>
+				  	<div class="form-group col-md-6 mb-0">
+						{{ contact_form.email|as_crispy_field }}
+				  	</div>
+					</div>
+					{{ contact_form.telephone|as_crispy_field }}
+					{{ contact_form.message|as_crispy_field }}
+					<button type="submit" class="btn btn-primary">Sign in</button>
+				</form>
+			</div>
 			</div>
 			{% endcomment %}
 

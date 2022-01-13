@@ -1856,8 +1856,8 @@ html .ui-button.ui-state-disabled:active {
 
 .my-form{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: start; */
+    /* align-items: stretch; */
     color: #000044;
 
     
@@ -3676,6 +3676,7 @@ html .ui-button.ui-state-disabled:active {
     padding-top: 60px;
     padding-bottom: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
 }
 
 .x_footer_top_title_box_icon_cont i:before {
@@ -3944,6 +3945,10 @@ html .ui-button.ui-state-disabled:active {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
 }
 
 .btc_tittle_img_overlay {
@@ -3959,8 +3964,9 @@ html .ui-button.ui-state-disabled:active {
 }
 
 .btc_tittle_left_heading {
-    float: left;
+    /* float: left; */
     width: 100%;
+    float: none;
 }
 
 .btc_tittle_left_heading h1 {
@@ -6588,6 +6594,21 @@ input[type=number] {
     -ms-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
+}
+
+.contact_body{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 40px;
+}
+
+.contact_divs{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+
 }
 
 .x_offer_car_heading_wrapper_contact {
