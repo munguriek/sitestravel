@@ -2,7 +2,7 @@
 
 
 ## Backend server
-### Installation of the virtual enviroment(For example env)
+### Installation of the virtual enviroment(For example env) using pipenv is also a good option
 cd backend
 python3 -m venv <venv>
 source <venv>/bin/activate
