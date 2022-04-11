@@ -1,0 +1,1131 @@
+[
+{
+  "model": "sessions.session",
+  "pk": "0jea1b7bu3xhc9keoe2s1ohje7w96jxa",
+  "fields": {
+    "session_data": ".eJxVjcsKgzAQRf8l6yIZ83ZXfySMk4ihEouJ0FL679Xiol3e17kv5nGrk99KXH0KrGPALr_egHSL-Qhwng-7QaJly7X5ds64NNddxVwTYU1L7s_VH2rCMu0cKaQ1QAOABsWlBKuUdjpAEIFbY8iApBFx0IJaIVsi7lQ0VskxuCjEAS2xlP3Gx8c9rU_WQcud5vz9AfY-Q5Y:1mxs4L:io8yNxn4BuUScACtNgwiBMCNMuoTOBo6RGtSTJ4KfV0",
+    "expire_date": "2021-12-30T14:49:17.264Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bgc1feq1dpt0hmjzw2pkjuowhqn34s1g",
+  "fields": {
+    "session_data": ".eJxVjU0OgyAQhe_CujEjOCju6kXIgEMkNdgIJm2a3r3auGiX7-97L2FpK5PdMq82jqIXUlx-PUf-xukIaJ4PuyLvly2V6ts541xdd8WpRE8lLmk4V3-oifK0czQG51SQRoUadAOu0cEjgWmRUQftUQGjoU7yCG09KmMoKKkCgjOdcwc0c877jeXHPa5P0dcSjAZ4fwBEzkSO:1mxsIi:ZULzOXwHsD6q9riFSoZ4CF7KI3r5o08bUDMg459IyAQ",
+    "expire_date": "2021-12-30T15:04:08.724Z"
+  }
+},
+{
+  "model": "sites.site",
+  "fields": {
+    "domain": "example.com",
+    "name": "example.com"
+  }
+},
+{
+  "model": "accounts.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$260000$75uHWpLmRTLlTDc2GdwkX1$RY9Ws/vtSBtr6kskgeSoUPTkFSZEmb7OdAKOBP7qAUM=",
+    "last_login": "2021-12-16T14:49:17.170Z",
+    "is_superuser": true,
+    "username": "george",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-12-16T13:08:54.423Z",
+    "photo": "",
+    "full_name": "",
+    "email": "geonhib@gmail.com",
+    "telephone": null,
+    "permit_class": null,
+    "country": "",
+    "permit": "",
+    "is_driver": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "fields": {
+    "password": "pbkdf2_sha256$260000$43jll6kybNtWUUQvExpYjO$0mG9EgDV7Mxue/8qz6hj5DPENGdBaLJlaZf5nRKXe5A=",
+    "last_login": "2021-12-16T15:04:08.603Z",
+    "is_superuser": false,
+    "username": "aunen7",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-12-16T14:47:21.849Z",
+    "photo": "",
+    "full_name": "",
+    "email": "aunen7@gmail.com",
+    "telephone": null,
+    "permit_class": null,
+    "country": "",
+    "permit": "",
+    "is_driver": false,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.index",
+  "pk": 1,
+  "fields": {
+    "about_us": "Sites Travel Ltd is a bespoke travel and tours management agency based in Uganda. We are a locally registered travel agency, certified by ATA, IATA and a member of Uganda Travel Bureau. We pride ourselves in more than 15 years of experience and expertise in the travel industry and our specialty is that point in life where you don’t know what to do next on your travel plans.",
+    "about_image": "",
+    "address": "Kampala, Uganda",
+    "tel_1": "+256 414 347 443",
+    "tel_2": "+256 414 347 443",
+    "email": "reservations@sitestravel-ug.com",
+    "facebook": "facebook link",
+    "twitter": "twitter link",
+    "youtube": "youtube link",
+    "whatsapp": null,
+    "instagram": "instagram link",
+    "last_updated": "2021-12-16T13:10:42.873Z"
+  }
+},
+{
+  "model": "myapp.accomadation",
+  "pk": 1,
+  "fields": {
+    "name": "nanjing hotel",
+    "budget": "mid range",
+    "available": true
+  }
+},
+{
+  "model": "myapp.accomadation",
+  "pk": 2,
+  "fields": {
+    "name": "agip motel",
+    "budget": "budget",
+    "available": true
+  }
+},
+{
+  "model": "myapp.accomadation",
+  "pk": 3,
+  "fields": {
+    "name": "masai mara",
+    "budget": "up market",
+    "available": true
+  }
+},
+{
+  "model": "myapp.accomadation",
+  "pk": 4,
+  "fields": {
+    "name": "serena",
+    "budget": "up market",
+    "available": true
+  }
+},
+{
+  "model": "myapp.car",
+  "pk": 1,
+  "fields": {
+    "car": "landruiser hardtop",
+    "image": "cars/hardtop_3PGRNHu.jpg",
+    "category": "4x4",
+    "capacity": 5,
+    "available": true,
+    "description": "Reliable offroad vehicle"
+  }
+},
+{
+  "model": "myapp.car",
+  "pk": 2,
+  "fields": {
+    "car": "toyota fortuner",
+    "image": "cars/fortuner.jpeg",
+    "category": "executive",
+    "capacity": 5,
+    "available": true,
+    "description": "Very comfortable vehicle"
+  }
+},
+{
+  "model": "myapp.car",
+  "pk": 3,
+  "fields": {
+    "car": "open roof van",
+    "image": "cars/safari_van.jpeg",
+    "category": "vans",
+    "capacity": 7,
+    "available": true,
+    "description": "Spacious van"
+  }
+},
+{
+  "model": "myapp.car",
+  "pk": 4,
+  "fields": {
+    "car": "landcruiser tx",
+    "image": "cars/tx.jpg",
+    "category": "safari",
+    "capacity": 5,
+    "available": true,
+    "description": "Reliable vehicle"
+  }
+},
+{
+  "model": "myapp.car",
+  "pk": 5,
+  "fields": {
+    "car": "van high roof",
+    "image": "cars/van_high_roof.jpeg",
+    "category": "vans",
+    "capacity": 7,
+    "available": true,
+    "description": "Spacious head room"
+  }
+},
+{
+  "model": "myapp.trip",
+  "pk": 1,
+  "fields": {
+    "category": null,
+    "destination": "jinja",
+    "image": "trips/jinja.jpeg",
+    "slots": 40,
+    "start": "2021-12-17",
+    "end": "2021-12-18",
+    "price": 70,
+    "arrival_accomodation": 1,
+    "trip_accomodation": 1,
+    "details": "",
+    "available": true
+  }
+},
+{
+  "model": "myapp.trip",
+  "pk": 2,
+  "fields": {
+    "category": null,
+    "destination": "zziwa rhino sanctuary",
+    "image": "trips/2.jpeg",
+    "slots": 50,
+    "start": "2021-12-17",
+    "end": "2021-12-18",
+    "price": 50,
+    "arrival_accomodation": 1,
+    "trip_accomodation": 1,
+    "details": "",
+    "available": true
+  }
+},
+{
+  "model": "myapp.trip",
+  "pk": 3,
+  "fields": {
+    "category": null,
+    "destination": "queen elizabeth",
+    "image": "trips/2daysqe.jpeg",
+    "slots": 60,
+    "start": "2021-12-19",
+    "end": "2021-12-21",
+    "price": 100,
+    "arrival_accomodation": 1,
+    "trip_accomodation": 1,
+    "details": "",
+    "available": true
+  }
+},
+{
+  "model": "myapp.trip",
+  "pk": 4,
+  "fields": {
+    "category": null,
+    "destination": "lake mburo",
+    "image": "trips/lake_mburo_9MLHejv.jpeg",
+    "slots": 90,
+    "start": "2021-12-18",
+    "end": "2021-12-25",
+    "price": 120,
+    "arrival_accomodation": 1,
+    "trip_accomodation": 1,
+    "details": "",
+    "available": true
+  }
+},
+{
+  "model": "myapp.trip",
+  "pk": 5,
+  "fields": {
+    "category": null,
+    "destination": "murchison falls",
+    "image": "trips/murchison.jpg",
+    "slots": 31,
+    "start": "2021-12-23",
+    "end": "2021-12-24",
+    "price": 160,
+    "arrival_accomodation": 2,
+    "trip_accomodation": 3,
+    "details": "",
+    "available": true
+  }
+},
+{
+  "model": "myapp.flight",
+  "pk": 1,
+  "fields": {
+    "start": "UG",
+    "destination": "AE",
+    "price": 300,
+    "image": "flights/dubai.jpeg",
+    "available": true
+  }
+},
+{
+  "model": "myapp.flight",
+  "pk": 2,
+  "fields": {
+    "start": "UG",
+    "destination": "KE",
+    "price": 150,
+    "image": "flights/nairobi.jpeg",
+    "available": true
+  }
+},
+{
+  "model": "myapp.flight",
+  "pk": 3,
+  "fields": {
+    "start": "US",
+    "destination": "UG",
+    "price": 1400,
+    "image": "flights/new_york.jpeg",
+    "available": true
+  }
+},
+{
+  "model": "myapp.flight",
+  "pk": 4,
+  "fields": {
+    "start": "UG",
+    "destination": "FR",
+    "price": 900,
+    "image": "flights/paris.jpeg",
+    "available": true
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 1,
+  "fields": {
+    "service": "car hire",
+    "trip": null,
+    "car": 3,
+    "flight": null,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-17",
+    "end": "2021-12-18",
+    "slots": 0,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:28:18.427Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 2,
+  "fields": {
+    "service": "car hire",
+    "trip": null,
+    "car": 3,
+    "flight": null,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-19",
+    "end": "2021-12-21",
+    "slots": 0,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:30:52.699Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 3,
+  "fields": {
+    "service": "car hire",
+    "trip": null,
+    "car": 3,
+    "flight": null,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-18",
+    "end": "2021-12-19",
+    "slots": 0,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:32:56.599Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 4,
+  "fields": {
+    "service": "trip",
+    "trip": 5,
+    "car": null,
+    "flight": null,
+    "pickup": "agip motel",
+    "dropoff": "boma",
+    "start": "2021-12-23",
+    "end": "2021-12-24",
+    "slots": 2,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:38:40.942Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 5,
+  "fields": {
+    "service": "flight",
+    "trip": null,
+    "car": null,
+    "flight": 3,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-15",
+    "end": null,
+    "slots": 0,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:39:38.769Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 6,
+  "fields": {
+    "service": "flight",
+    "trip": null,
+    "car": null,
+    "flight": 3,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-25",
+    "end": null,
+    "slots": 0,
+    "adults": 2,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "george"
+    ],
+    "booked_on": "2021-12-16T14:46:42.530Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 7,
+  "fields": {
+    "service": "trip",
+    "trip": 5,
+    "car": null,
+    "flight": null,
+    "pickup": "agip motel",
+    "dropoff": "boma",
+    "start": "2021-12-23",
+    "end": "2021-12-24",
+    "slots": 3,
+    "adults": 0,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "aunen7"
+    ],
+    "booked_on": "2021-12-16T14:48:10.144Z"
+  }
+},
+{
+  "model": "myapp.booking",
+  "pk": 8,
+  "fields": {
+    "service": "flight",
+    "trip": null,
+    "car": null,
+    "flight": 2,
+    "pickup": "",
+    "dropoff": "",
+    "start": "2021-12-18",
+    "end": null,
+    "slots": 0,
+    "adults": 1,
+    "children": 0,
+    "driven_by": "driver",
+    "carhire_trip": "up country",
+    "booked_by": [
+      "aunen7"
+    ],
+    "booked_on": "2021-12-16T14:48:38.298Z"
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 1,
+  "fields": {
+    "picture": "gallery/assoc_rbdROVx.png",
+    "category": "partner",
+    "caption": "assoc",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 2,
+  "fields": {
+    "picture": "gallery/eatp_fnzyKKR.png",
+    "category": "partner",
+    "caption": "eatp",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 3,
+  "fields": {
+    "picture": "gallery/iata_ueqyZEQ.png",
+    "category": "partner",
+    "caption": "iata",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 4,
+  "fields": {
+    "picture": "gallery/safari_VhASmOJ.jpg",
+    "category": "partner",
+    "caption": "safari",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 5,
+  "fields": {
+    "picture": "gallery/ugata_IKUHCgO.png",
+    "category": "partner",
+    "caption": "ugata",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 6,
+  "fields": {
+    "picture": "gallery/uta_ZBtLAEo.png",
+    "category": "partner",
+    "caption": "uta",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 7,
+  "fields": {
+    "picture": "gallery/utb_BA6dUDO.png",
+    "category": "partner",
+    "caption": "utb",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 8,
+  "fields": {
+    "picture": "gallery/uwa_EwegDJQ.jpeg",
+    "category": "partner",
+    "caption": "uwa",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 9,
+  "fields": {
+    "picture": "gallery/photos-10.jpg",
+    "category": "gallery",
+    "caption": "antelopes",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 10,
+  "fields": {
+    "picture": "gallery/photos-12.jpg",
+    "category": "gallery",
+    "caption": "giraffe",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 11,
+  "fields": {
+    "picture": "gallery/photos-13.jpg",
+    "category": "gallery",
+    "caption": "tours and travel",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 12,
+  "fields": {
+    "picture": "gallery/photos-14.jpg",
+    "category": "gallery",
+    "caption": "elephants",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 13,
+  "fields": {
+    "picture": "gallery/photos-16.jpg",
+    "category": "gallery",
+    "caption": "buffalos",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 14,
+  "fields": {
+    "picture": "gallery/photos-17.jpg",
+    "category": "gallery",
+    "caption": "forest",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 15,
+  "fields": {
+    "picture": "gallery/photos-18.jpg",
+    "category": "gallery",
+    "caption": "wilderness",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 16,
+  "fields": {
+    "picture": "gallery/photos-20.jpg",
+    "category": "gallery",
+    "caption": "sunset",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 17,
+  "fields": {
+    "picture": "gallery/photos-23.jpg",
+    "category": "gallery",
+    "caption": "antelope",
+    "hidden": false
+  }
+},
+{
+  "model": "myapp.gallery",
+  "pk": 18,
+  "fields": {
+    "picture": "gallery/photos-24.jpg",
+    "category": "gallery",
+    "caption": "buffalo",
+    "hidden": false
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 1,
+  "fields": {
+    "title": "the golden finch",
+    "slug": "the-golden-finch",
+    "thumbnail": "blogs/golden_finch.jpeg",
+    "time": "2021-12-16T14:56:08.795Z",
+    "content": "<p>The true finches are small to medium-sized passerine birds in the family Fringillidae. Finches have stout conical bills adapted for eating seeds and nuts and often have colourful plumage. They occupy a great range of habitats where they are usually resident and do not migrate</p>",
+    "status": 1,
+    "author": [
+      "george"
+    ]
+  }
+},
+{
+  "model": "blog.post",
+  "pk": 2,
+  "fields": {
+    "title": "the red sparrow",
+    "slug": "the-red-sparrow",
+    "thumbnail": "blogs/red_sparrow.jpeg",
+    "time": "2021-12-16T14:58:31.023Z",
+    "content": "<p>Groups of little brown birds that hop around underfoot in cities, parks, and farms &mdash; how can you tell what is a finch and what is a sparrow? Even harder, how can you differentiate between the many possible species that you could be looking at? Well luckily, if you&rsquo;re in an area of human settlement like the three types of places listed above, it&rsquo;s likely that you&rsquo;re faced with&nbsp;<a href=\"http://celebrateurbanbirds.org/learn/birds/focal-species/house-sparrow/\">House Sparrows</a>&nbsp;or&nbsp;<a href=\"http://celebrateurbanbirds.org/learn/birds/focal-species/house-finch/\">House Finches</a>; these species thrive on our leftovers or birdseed and are extremely common.</p>\r\n\r\n<p>If you catch any glimpses of red, then you can be fairly sure you&rsquo;ve just seen a House Finch. The males of this species have red faces, breasts, and rumps. By contrast, House Sparrow males have gray heads, whitish cheeks, and a black bib under the chin.</p>",
+    "status": 1,
+    "author": [
+      "george"
+    ]
+  }
+},
+{
+  "model": "blog.comment",
+  "pk": 1,
+  "fields": {
+    "author": [
+      "aunen7"
+    ],
+    "post": 1,
+    "content": "well done",
+    "status": 1,
+    "time": "2021-12-16T15:04:28.834Z"
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "aunen7"
+    ],
+    "email": "aunen7@gmail.com",
+    "verified": false,
+    "primary": true
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2021-12-16T13:34:12.141Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "accomadation"
+    ],
+    "object_id": "1",
+    "object_repr": "nanjing hotel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2021-12-16T13:37:31.115Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "accomadation"
+    ],
+    "object_id": "2",
+    "object_repr": "agip motel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2021-12-16T13:37:46.418Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "accomadation"
+    ],
+    "object_id": "3",
+    "object_repr": "masai mara",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2021-12-16T13:38:07.209Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "accomadation"
+    ],
+    "object_id": "4",
+    "object_repr": "serena",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2021-12-17T06:48:20.241Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "1",
+    "object_repr": "assoc - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2021-12-17T06:49:32.986Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "2",
+    "object_repr": "eatp - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2021-12-17T06:49:44.819Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "3",
+    "object_repr": "iata - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2021-12-17T06:50:03.755Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "4",
+    "object_repr": "safari - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2021-12-17T06:50:17.166Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "5",
+    "object_repr": "ugata - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2021-12-17T06:50:30.030Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "6",
+    "object_repr": "uta - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2021-12-17T06:50:41.915Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "7",
+    "object_repr": "utb - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2021-12-17T06:50:54.842Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "8",
+    "object_repr": "uwa - partner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2021-12-17T06:51:38.940Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "9",
+    "object_repr": "antelopes - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2021-12-17T06:51:58.580Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "10",
+    "object_repr": "giraffe - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2021-12-17T06:52:11.161Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "11",
+    "object_repr": "tours and travel - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2021-12-17T06:52:19.832Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "12",
+    "object_repr": "elephants - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2021-12-17T06:52:51.526Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "13",
+    "object_repr": "buffalos - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2021-12-17T06:53:04.203Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "14",
+    "object_repr": "forest - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2021-12-17T06:53:15.301Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "15",
+    "object_repr": "wilderness - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2021-12-17T06:53:30.480Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "16",
+    "object_repr": "sunset - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2021-12-17T06:53:47.419Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "17",
+    "object_repr": "antelope - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2021-12-17T06:53:57.957Z",
+    "user": [
+      "george"
+    ],
+    "content_type": [
+      "myapp",
+      "gallery"
+    ],
+    "object_id": "18",
+    "object_repr": "buffalo - gallery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

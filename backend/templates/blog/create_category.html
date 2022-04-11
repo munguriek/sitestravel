@@ -1,0 +1,116 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- hs Navigation End -->
+<!-- btc tittle Wrapper Start -->
+<div class="btc_tittle_main_wrapper">
+	<div class="btc_tittle_img_overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_left_heading">
+					<h1>Categories</h1>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_right_heading">
+					<div class="btc_tittle_right_cont_wrapper">
+						<ul>
+							<li>
+								<a href="{% url 'index' %}">Home</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>Categories</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- btc tittle Wrapper End -->
+
+
+<!-- cars Start -->
+<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+	<div class="container">
+		<div class="row">
+			<!-- sidebar -->
+
+			{% include 'includes/blog_sidebar.html' %}
+
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+				<div class="x_carbooking_right_section_wrapper float_left">
+					<div class="row">
+						<div class="col-12 col-md-8 offset-md-3">
+							<p class="text-center">
+								{% include 'includes/messages.html' %}
+							</p>
+						</div>
+						<div class="x_services_title_main_wrapper float_left padding_tb_10">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+											<h4>All Categories</h4>
+											<h3>Categories</h3>
+											<!-- <p>Dashboard and Management console for Site Travel website</p> -->
+										</div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 full_width">
+									<!-- modal start-->
+									<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+										Add Category
+									</button>
+									<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											</div>
+											<div class="modal-body">
+												<form method="post" enctype='multipart/form-data'>
+													{% csrf_token %}
+													{{ category_form |crispy }}
+													<div class="float-right">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+														<button type="submit" class="btn btn-success">Save</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										</div>
+									</div>
+									<table id="myTable" class="table table-bordered table-hover table-striped table-responsive">
+										<thead>
+											<tr>
+												<th>Category</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for category  in categories  %}
+											<tr>
+												<td>{{category.name}}</td>
+											</tr>
+											{% endfor %}
+										</tbody>
+										</table>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- CArs End -->
+
+{% endblock %}

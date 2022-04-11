@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Sites Travel</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta name="description" content="Sites Travel Ltd is a bespoke travel and tours management agency based in Uganda" />
+	<meta name="keywords" content="tours, travel, travel industry, car hire, airport drops and pickups, air ticketing,
+	 holiday, Uganda Travel Bureau" />
+	<meta name="author" content="autonomous codestore" />
+	<meta name="MobileOptimized" content="320" />
+	<!-- icons -->
+	<script src="https://kit.fontawesome.com/f964d15bb5.js" crossorigin="anonymous"></script>
+	<!--Template style -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/xpedia.css' %}" />
+	<!--favicon-->
+	<link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+	<!-- datatables -->
+	<!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css"> -->
+	<link rel="stylesheet" href="{% static 'vendor/simple-datatables/style.css' %}">
+
+</head>
+
+<body>
+	<!-- preloader Start -->
+	<div id="preloader">
+		<div id="status">
+			<img src="{% static 'images/loader.gif' %}" id="preloader_image" alt="loader">
+		</div>
+	</div>
+	
+	
+	{% include 'includes/navbar.html' %}
+
+	<!-- Start here -->
+	
+	{% block content %}
+	{% endblock content %}
+		
+	<!-- End here  -->
+
+	<!-- x footer Start -->
+	{% include 'includes/footer.html' %}
+
+	<!-- Alert timeout -->
+	<script type="text/javascript">
+		window.setTimeout(function() {
+		$(".alert").fadeTo(500, 0).slideUp(500, function(){
+			$(this).remove(); 
+		});
+		}, 2000);
+	</script>
+
+	<script src="{% static 'vendor/simple-datatables/simple-datatables.js' %}"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script> -->
+	<script>
+		let myTable = document.querySelector('#myTable');
+		let dataTable = new simpleDatatables.DataTable(myTable);
+	</script>
+
+	<script>
+		$(document).ready(function(){
+
+var current_fs, next_fs, previous_fs; //fieldsets
+var opacity;
+
+$(".next").click(function(){
+
+current_fs = $(this).parent();
+next_fs = $(this).parent().next();
+
+//Add Class Active
+$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+//show the next fieldset
+next_fs.show();
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+next_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$(".previous").click(function(){
+
+current_fs = $(this).parent();
+previous_fs = $(this).parent().prev();
+
+//Remove class active
+$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+//show the previous fieldset
+previous_fs.show();
+
+//hide the current fieldset with style
+current_fs.animate({opacity: 0}, {
+step: function(now) {
+// for making fielset appear animation
+opacity = 1 - now;
+
+current_fs.css({
+'display': 'none',
+'position': 'relative'
+});
+previous_fs.css({'opacity': opacity});
+},
+duration: 600
+});
+});
+
+$('.radio-group .radio').click(function(){
+$(this).parent().find('.radio').removeClass('selected');
+$(this).addClass('selected');
+});
+
+$(".submit").click(function(){
+return false;
+})
+
+});
+	</script>
+
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/modernizr.js' %}"></script>
+	<script src="{% static 'js/select2.min.js' %}"></script>
+	<script src="{% static 'js/jquery.menu-aim.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.js' %}"></script>
+	<script src="{% static 'js/own-menu.js' %}"></script>
+	<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+	<script src="{% static 'js/xpedia.js' %}"></script>
+	<!-- custom js-->
+</body>
+
+</html>

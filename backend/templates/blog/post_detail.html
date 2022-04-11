@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    	<!-- btc tittle Wrapper Start -->
+	<div class="btc_tittle_main_wrapper">
+		<div class="btc_tittle_img_overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_left_heading">
+						<h1>Our Services</h1>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_right_heading">
+						<div class="btc_tittle_right_cont_wrapper">
+							<ul>
+								<li><a href="{% url 'index' %}">Home</a>  <i class="fa fa-angle-right text-white"></i></li>
+								<li>Blog Details</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- btc tittle Wrapper End -->
+
+		<!-- x blog main and sidebar Wrapper Start -->
+		<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-8 offset-md-3">
+						<p class="text-center">{% include 'includes/messages.html' %}</p>
+					</div>
+
+					{% include 'includes/blog_sidebar.html' %}
+					
+					<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+						<div class="x_blog_left_side_wrapper float_left">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="lr_bc_first_box_main_wrapper">
+										<div class="lr_bc_first_box_img_wrapper">
+											<a href="{% url 'post_detail' post.id %}">
+												{% if post.thumbnail %}
+												<img src="{{post.thumbnail.url}}" style="width: 840px; height: 445px;"  alt="blog img">
+												{% else %}
+												<img src="{% static 'images/bc1.jpg' %}" alt="blog img">
+												{% endif %}
+											</a>
+												
+										</div>
+										<div class="lr_bc_first_box_img_cont_wrapper">
+											<h2><a href="{% url 'post_detail' post.id %}">{{post.title |title }}</a></h2>
+											<ul>
+												<li><i class="fa fa-calendar"></i>&nbsp; <a href="#">{{post.time |timesince }}</a>
+												</li>
+												<li><i class="fa fa-user-o"></i>&nbsp; <a href="#">{{post.author}}</a>
+												</li>
+												<li><i class="fa fa-comments-o"></i>&nbsp; <a href="#">{{comment_count}} comments</a>
+												</li>
+											</ul>
+											<p>
+												<br>
+												<br>{{post.content |safe }}</p>
+										</div>
+										<!-- <div class="blog_single_social_icon float_left">
+											<h3>Share Post :</h3>
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-twitter"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-rss"></i></a>
+												</li>
+												<li><a href="#"><i class="fa fa-linkedin"></i></a>
+												</li>
+											</ul>
+										</div> -->
+									</div>
+								</div>
+								<!-- comment form -->
+								
+								{% if request.user.is_authenticated %}
+								<div class="col-md-12">
+									<div class="blog_single_admin_sec container">
+										<form method="POST">
+											{% csrf_token %}
+											{{comment_form |crispy }}
+											<div class="float-right contect_btn">
+												<button type="submit" class="btn btn-success contect_btn">Submit</button>
+											</div>
+										</form>
+									</div>
+								</div>
+								{% else %}
+								<hr>
+								<p class="mx-auto font-weight-bold">Please login in to add comment</p>
+								{% endif %}
+									
+								<div class="col-md-12">
+									<div class="row">
+										<div class="blog_single_comment_heading_wrapper">
+											<div class="blog_single_comment_heading">
+												<h4>Comments ({{comment_count}})</h4>
+											</div>
+										</div>
+										
+										{% if comments %}
+										{% for comment in comments %}
+										<div class="col-md-12">
+											<div class="blog_single_comment_wrapper">
+												
+												<div class="blog_comment1_wrapper">
+													<div class="blog_comment1_img">
+														
+														{% if comment.author.photo %}
+														<img src="{{ comment.author.photo.url }}" alt="comment img" style="width: 70px; height: 70px;" class="img-responsive img-circle" />
+														{% else %}
+														<img src="{% static 'images/avatar.png' %}" alt="comment img" style="width: 70px; height: 70px;" class="img-responsive img-circle" />
+														{% endif %}
+															
+													</div>
+													<div class="blog_comment1_cont">	
+														<h3 class="h6">{{comment.author}} <i class="fa fa-circle"></i> <span>{{comment.time |timesince }} </span></h3>
+														<p>{{comment.content}}</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+										{% else %}
+										{{empty}}
+										{% endif %}
+
+									</div>
+
+								</div>
+
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- x blog main and sidebar Wrapper End -->
+
+{% endblock content %}
+    

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+	<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="x_carbooking_right_section_wrapper float_left">
+						<div class="row">
+							<div class="x_services_title_main_wrapper float_left padding_tb_10">
+								<div class="container">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+												<h4>Services we offer</h4>
+												<h3>Car Hire</h3>
+												<!-- <p>Dashboard and Management console for Site Travel website</p> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Package title -->
+							<div class="col-md-12 my-4">
+								<div class="card">
+									<h5 class="card-header">Car Details</h5>
+									<div class="card-body">
+									  <p class="card-text">Car Make: {{ car.car |title }} </p>
+									</div>
+								  </div>
+							</div>
+							<!-- card body-->
+							<div class="col-md-12 my-4">
+								<div class="card">
+									<h5 class="card-header">Flight Booking</h5>
+									<div class="card-body">
+										<form method="POST">
+											{% csrf_token %}
+											{{ booking_form |crispy }}
+											<div class="float-right my-2">
+												<a href="{% url 'car_list' %}" class="btn btn-secondary mx-2">Cancel</a>
+												<button type="submit" class="btn btn-success">Save</button>
+											</div>										  
+										</form>
+									</div>
+								  </div>
+							</div>
+	
+							<!-- <div class="col-md-12">
+								<div class="x_car_acc_bottom_button float_left">
+									<p>
+										<i class="fa fa-info-circle"></i> &nbsp;Phasellus ornare, ante
+										vitae consectetuer consequat, purus sapien ultricies dolor.
+									</p>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
+    

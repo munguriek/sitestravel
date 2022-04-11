@@ -1,0 +1,192 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- hs Navigation End -->
+<!-- btc tittle Wrapper Start -->
+<div class="btc_tittle_main_wrapper">
+	<div class="btc_tittle_img_overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_left_heading">
+					<h1>Blogs</h1>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_right_heading">
+					<div class="btc_tittle_right_cont_wrapper">
+						<ul>
+							<li>
+								<a href="{% url 'index' %}">Home</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>Blogs</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- btc tittle Wrapper End -->
+
+
+<!-- x car book sidebar section Wrapper Start -->
+<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-8 offset-md-3">
+				<p class="text-center">{% include 'includes/messages.html' %}</p>
+			</div>
+			
+			
+			{% include 'includes/blog_sidebar.html' %}
+
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+				{% if request.user.is_staff %}
+				<!-- <p><i class="fa fa-info-circle"></i></p> -->
+				<a href="{% url 'create_post' %}" class="btn btn-primary btn-sm mx-3">write blog</a>
+				{% else %}
+				{{empty}}										
+				{% endif %}
+				<!-- x blog main and sidebar Wrapper Start -->
+				<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100" style="padding-top: 15px;">
+					<div class="container">
+						<div class="row">								
+							<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+								<div class="x_blog_left_side_wrapper float_left">
+									<div class="row">
+										{% if posts %}
+										{% for post in posts %}
+										<div class="col-md-12">
+											<div class="lr_bc_first_box_main_wrapper">
+												<div class="lr_bc_first_box_img_wrapper">
+													{% if post.thumbnail %}
+													<a href=""></a>
+													<img src="{{post.thumbnail.url}}" style="width:840px; height: 445px;" alt="blog img">
+													{% else %}
+													<img src="{% static 'images/bc1.jpg' %}" alt="blog img">
+													{% endif %}
+														
+												</div>
+												<div class="lr_bc_first_box_img_cont_wrapper">
+													<h2>{{post.title |title }}</h2>
+													<ul>
+														<li><i class="fa fa-calendar"></i>&nbsp; <a href="#">{{post.time |timesince }}</a>
+														</li>
+														<li><i class="fa fa-user-o"></i>&nbsp; <a href="#">{{post.author}}</a>
+														</li>
+														<li>
+															{% if request.user.is_staff %}
+																{% if post.status == True %}
+																<i class="fas fa-toggle-off"></i> <a href="{% url 'post_visibility' post.id %}">Hide post</a>
+																{% else %}
+																<i class="fas fa-toggle-on"></i> <a href="{% url 'post_visibility' post.id %}">Publish post</a>
+																{% endif %}
+															{% endif %}
+														</li>
+														<li>
+															{% if request.user.is_staff %}
+															<i class="fas fa-feather-alt"></i> <a href="{% url 'post_update' post.id %}">Update post</a>
+															{% else %}
+															{%endif%}
+														</li>
+													</ul>
+													<p>{{post.content|slice:255 |safe }}</p> 
+													<span class="my-5"><a href="{% url 'post_detail' post.id %}">Read More &nbsp;<i class="fa fa-angle-double-right"></i></a></span>
+													<hr>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+										{% else %}
+										<p class="mx-auto font-weight-bold my-4 py-4">No blog post yet.</p>
+										{% endif %}
+
+										
+										{% comment %}
+										{% if posts.has_other_pages %}
+										<ul class="pagination">
+											{% if posts.has_previous %}
+											<li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
+											{% else %}
+											<li class="disabled"><span>&laquo;</span></li>
+											{% endif %}
+
+											{% for i in posts.paginator.page_range %}
+											{% if posts.number == i %}
+												<li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+											{% else %}
+												<li><a href="?page={{ i }}">{{ i }}</a></li>
+											{% endif %}
+											{% endfor %}
+
+											{% if posts.has_next %}
+											<li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
+											{% else %}
+											<li class="disabled"><span>&raquo;</span></li>
+											{% endif %}
+										</ul>
+										{% endif %}
+										{% endcomment %}
+											
+										
+										<!-- pagination -->
+										<div class="col-md-12">
+											<div class="pager_wrapper prs_blog_pagi_wrapper blog_pager_wrapper">
+												{% if posts.has_other_pages %}
+												<ul class="pagination">
+													{% if posts.has_previous %}
+													<li><a href="?page={{ posts.previous_page_number }}"><i class="flaticon-left-arrow"></i></a>
+													{% else %}
+													{{empty}}
+													{% endif %}
+													<!-- </li>
+													<li class="btc_shop_pagi"><a href="#">01</a>
+													</li>
+													<li class="btc_shop_pagi"><a href="#">02</a>
+													</li>
+													<li class="btc_third_pegi btc_shop_pagi"><a href="#">03</a>
+													</li>
+													<li class="hidden-xs btc_shop_pagi"><a href="#">...</a>
+													</li>
+													<li><a href="#"><i class="flaticon-right-arrow"></i></a>
+													</li> -->
+
+													{% for i in posts.paginator.page_range %}
+													{% if posts.number == i %}
+														<li class="active"><a href="#">{{ i }} <span class="sr-only">(current)</span></a></li>
+														{{empty}}
+													{% else %}
+														<li><a href="?page={{ i }}" class="btc_shop_pagi">{{ i }}</a></li>
+													{% endif %}
+													{% endfor %}
+
+													{% if posts.has_next %}
+													<li><a href="?page={{ posts.next_page_number }}"><i class="flaticon-right-arrow"></i></a>
+													{% else %}
+													{{empty}}
+													{% endif %}
+												</ul>
+												{% endif %}
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- end list  -->
+						</div>
+					</div>
+				</div>
+				<!-- x blog main and sidebar Wrapper End -->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- x car book sidebar section Wrapper End -->
+
+{% endblock %}

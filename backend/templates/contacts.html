@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    	<!-- btc tittle Wrapper Start -->
+	<div class="btc_tittle_main_wrapper">
+		<div class="btc_tittle_img_overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_left_heading">
+						<h1>Our Services</h1>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_right_heading">
+						<div class="btc_tittle_right_cont_wrapper">
+							<ul>
+																<li><a href="{% url 'index' %}">Home</a>  <i class="fa fa-angle-right text-white"></i></li>
+
+								<li>Contact Us</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- btc tittle Wrapper End -->
+
+	<!-- xs offer car tabs Start -->
+	<div class="x_contact_title_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="x_offer_car_heading_wrapper x_offer_car_heading_wrapper_contact float_left">
+						<h4>get in touch</h4>
+						<h3>Contact Info</h3>
+						<p>Please donot hesistate to reach us. </p>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+					<div class="x_contact_title_icon_cont_main_box">
+						<div class="x_contact_title_icon">	<i class="fa fa-map-marker"></i>
+						</div>
+						<div class="x_contact_title_icon_cont">
+							<h3><a href="#">address</a></h3>
+							<p> Kampala, Uganda,</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+					<div class="x_contact_title_icon_cont_main_box">
+						<div class="x_contact_title_icon">	<i class="flaticon-phone-call"></i>
+						</div>
+						<div class="x_contact_title_icon_cont">
+							<h3><a href="#">phone Number</a></h3>
+							<p> +256 414 347 443 <br> +256 772 200 120</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 full_width">
+					<div class="x_contact_title_icon_cont_main_box">
+						<div class="x_contact_title_icon">	<i class="flaticon-mail-send"></i>
+						</div>
+						<div class="x_contact_title_icon_cont">
+							<h3><a href="#">Email Address</a></h3>
+							<p><a href="mailto:reservations@sitestravel-ug.com">reservations@sitestravel-ug.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+				<!-- modal form -->
+			<form method="post" enctype='multipart/form-data'>
+				{% csrf_token %}
+				{{ contact_form |crispy }}
+				<div class="float-right">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-success">Save</button>
+				</div>
+			</form>
+					
+			
+			
+			<!-- my form -->
+			{% comment %}
+			<form method="post">
+				{% csrf_token %}
+				<div class="form-row">
+					<div class="form-group col-md-6 mb-0">
+						{{ contact_form.full_name|as_crispy_field }}
+					  </div>
+				  <div class="form-group col-md-6 mb-0">
+					{{ contact_form.email|as_crispy_field }}
+				  </div>
+				</div>
+				{{ contact_form.telephone|as_crispy_field }}
+				{{ contact_form.message|as_crispy_field }}
+				<button type="submit" class="btn btn-primary">Sign in</button>
+			  </form>
+			{% endcomment %}
+
+
+			<!-- tell em start -->
+			<!-- <form class="my-4" method="POST" action="{% url 'contacts' %}" role="form">
+				{% csrf_token %}
+				<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="inputPassword4">Name</label>
+						<input type="text" class="form-control" id="name" name="full_name" placeholder="Password">
+					  </div>
+				  <div class="form-group col-md-6">
+					<label for="inputEmail4">Email</label>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Email">
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="inputAddress">telephone</label>
+				  <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telephone">
+				</div>
+				<div class="form-group">
+					<label for="exampleFormControlTextarea1">Message</label>
+					<textarea class="form-control" id="message" name="message" rows="4" placeholder="Message"></textarea>
+				  </div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			  </form> -->
+			<!-- tell em end -->
+				
+			
+		</div>
+	</div>
+
+
+	<!-- map section start -->
+
+	<!-- xs offer car tabs Start -->
+	<!-- <div class="x_contact_title_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-3">
+                    <p class="text-center">{% include 'includes/messages.html' %}</p>
+                </div>
+				<div class="col-md-12">
+					<div class="x_offer_car_heading_wrapper x_offer_car_heading_wrapper_contact float_left">
+						<h4>get in touch</h4>
+						<h3>Leave A Message</h3>
+						<p>Fill in the form below</p>
+					</div>
+				</div>
+				<div class="col-xl-5 offset-xl-1 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="contect_form1">
+						<input type="text" placeholder="First Name *">
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="contect_form2">
+						<input type="text" placeholder="Last Name *">
+					</div>
+				</div>
+				<div class="col-xl-5 offset-xl-1 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="contect_form2">
+						<input type="email" placeholder="Email *">
+					</div>
+				</div>
+				<div class="col-xl-5 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+					<div class="contect_form2">
+						<input type="text" placeholder="Phone *">
+					</div>
+				</div>
+				<div class="col-xl-10 offset-xl-1 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="contect_form4">
+						<textarea rows="4" placeholder="Write Comment"></textarea>
+					</div>
+				</div>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="contect_btn contect_btn_contact">
+						<ul>
+							<li><a href="#">Send Message <i class="fa fa-arrow-right"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>  -->
+	<!-- xs offer car tabs Start -->
+
+
+
+	
+	{% comment %}
+			<!-- form start -->
+			<form method="post">
+				{% csrf_token %}
+				<div class="form-row">
+				<div class="form-group col-md-6 mb-0">
+					{{ contact_form.full_name|as_crispy_field }}
+				</div>
+				<div class="form-group col-md-6 mb-0">
+					{{ contact_form.email|as_crispy_field }}
+				</div>
+				</div>
+				{{ contact_form.email|as_crispy_field }}
+				{{ contact_form.telephone|as_crispy_field }}
+				<div class="form-row">
+				<div class="form-group col-md-6 mb-0">
+					{{ contact_form.comment|as_crispy_field }}
+				</div>
+				
+				<button type="submit" class="btn btn-primary">Sign in</button>
+			</form>
+	{% endcomment %}
+		
+
+	
+
+{% endblock content %}
+    

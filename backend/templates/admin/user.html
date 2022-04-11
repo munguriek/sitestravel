@@ -1,0 +1,142 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- btc tittle Wrapper Start -->
+<div class="btc_tittle_main_wrapper">
+	<div class="btc_tittle_img_overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_left_heading">
+					<h1>Profile</h1>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+				<div class="btc_tittle_right_heading">
+					<div class="btc_tittle_right_cont_wrapper">
+						<ul>
+							<li>
+								<a href="{% url 'index' %}">Home</a>
+								<i class="fa fa-angle-right"></i>
+							</li>
+							<li>Profile</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- btc tittle Wrapper End -->
+
+<!-- Packages Start -->
+<div class="x_blog_sidebar_main_wrapper float_left padding_tb_100">
+	<div class="container">
+		<div class="row">
+			<!-- sidebar -->
+			{% include 'includes/sidebar.html' %}
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+				<div class="x_carbooking_right_section_wrapper float_left">
+					<div class="row">
+						<div class="col-12 col-md-8 offset-md-3">
+							<p class="text-center">
+								{% include 'includes/messages.html' %}
+							</p>
+						</div>
+						<div class="x_services_title_main_wrapper float_left padding_tb_10">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+											<h4>User details</h4>
+											<h3>Profile</h3>
+											<!-- <p>Dashboard and Management console for Site Travel website</p> -->
+										</div>
+									</div>
+									<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 full_width">
+									<!-- modal start-->
+									<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+										Update profile
+									</button>
+									<a href="{% url 'my_bookings' %}" class="btn btn-outline-primary mx-2">My Bookings</a>
+
+									<!-- Update user's modal -->
+									<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											</div>
+											<div class="modal-body">
+												<form method="post" enctype='multipart/form-data'>
+													{% csrf_token %}
+													{{ update_user |crispy }}
+													<div class="float-right">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+														<button type="submit" class="btn btn-success">Save</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										</div>
+									</div>
+
+									<!-- car detail -->
+									<div class="row">
+										<div class="col-md-6 my-4">
+											<div class="card">
+												<h5 class="card-header">
+													{% if user.full_name %}
+														{{user.full_name |title }}
+													{% else %}
+														{{user.email}}'s
+													{% endif %}	
+												</h5>
+												<div class="card-body">
+												  <p >Email: {{ user  }}</p>
+												  <p >Full name: {{ user.full_name |title }}</p>
+												  <p> Telephone {{user.telephone}}</p>
+												  <p >Permit class: {{ user.permit_class}}</p>
+												  <p >Driver: {{ user.is_driver|yesno:"Yes,No" }}</p>
+												  <p >Verified: {{ user.is_verified|yesno:"Yes,No"  }}</p>
+												  <p>Date joined: {{user.date_joined }}</p>
+												</div>
+											  </div>
+										</div>
+										<div class="col-md-6 my-4">
+											<div class="card">
+												<h5 class="card-header">Profile Picture </h5>
+												<div class="card-body">												  
+												  {% if user.permit %}
+												  <a href="{{user.permit.url}}" target="blank">
+													<img src="{{user.permit.url}}" height="auto" width="282px" alt="">
+												  </a>
+													{% else %}
+													  <img class="mx-5" src="{% static 'images/avatar.png' %}" height="220px" width="220px" alt="user permit">
+												  {% endif %}
+													  
+												</div>
+											  </div>
+										</div>
+									</div>
+									
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Packages End -->
+
+{% endblock %}

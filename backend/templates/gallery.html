@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    	<!-- btc tittle Wrapper Start -->
+	<div class="btc_tittle_main_wrapper">
+		<div class="btc_tittle_img_overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_left_heading">
+						<h1>Gallery</h1>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 full_width">
+					<div class="btc_tittle_right_heading">
+						<div class="btc_tittle_right_cont_wrapper">
+							<ul>
+								<li><a href="{% url 'index' %}">Home</a>  <i class="fa fa-angle-right text-white"></i></li>
+								<li>Gallery</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- btc tittle Wrapper End -->
+
+
+	<!-- xs offer car tabs Start -->
+	<div class="x_ln_car_main_wrapper float_left padding_tb_100">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-3">
+                    <p class="text-center">{% include 'includes/messages.html' %}</p>
+                </div>
+				<div class="col-md-12">
+					<div class="x_offer_car_heading_wrapper x_offer_car_tb_heading_wrapper float_left">
+						<h4>Our services in pictures</h4>
+						<h3>Gallery</h3>
+						<p>Navigate through our rich gallery.</p>
+					</div>
+				</div>
+				
+				<div class="col-md-12">
+					<div class="btc_ln_slider_wrapper">
+						<div class="owl-carousel owl-theme">
+							{% if pictures %}
+							{% for pic in pictures %}
+							<div class="item">
+								<div class="btc_team_slider_cont_main_wrapper">
+									<div class="btc_team_img_wrapper">
+										{% if pic.picture %}
+										<img src="{{pic.picture.url}}" style="width:370px; height:330px;" alt="image">
+										{% else %}
+										<img src="{% static 'images/tb1.jpg' %}" alt="gallery images">
+										{% endif %}
+										<!-- <div class="btc_team_social_wrapper">
+											<ul>
+												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+											</ul>
+										</div> -->
+									</div>
+									<div class="btc_team_img_cont_wrapper">
+										<p>{{pic.caption}}</p>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+							{% else %}
+								<p class="mx-auto">No pictures uploaded yet</p>
+							{% endif %}						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--js Start-->
+
+
+{% endblock content %}
+    
