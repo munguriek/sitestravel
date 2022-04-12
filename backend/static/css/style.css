@@ -1196,7 +1196,7 @@ ul {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #fcb939;
+    background: #78c157;
     color: #ffffff;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
@@ -1206,7 +1206,7 @@ ul {
 
 .slider-area .carousel-inner .carousel-item .carousel-captions .content li:first-child a:hover {
     background: #ffffff;
-    color: #111111;
+    color: #78c157;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1219,8 +1219,8 @@ ul {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #ffffff;
-    color: #111111;
+    background: #fcb939;
+    color: #ffffff;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -1228,8 +1228,8 @@ ul {
 }
 
 .slider-area .carousel-inner .carousel-item .carousel-captions .content li:last-child a:hover {
-    background: #000044;
-    color: #ffffff;
+    background: #ffffff;
+    color: #fcb939;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
