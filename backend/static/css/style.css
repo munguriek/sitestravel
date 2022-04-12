@@ -1196,7 +1196,7 @@ ul {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #000044;
+    background: #fcb939;
     color: #ffffff;
     text-transform: uppercase;
     -webkit-border-radius: 10px;
@@ -1495,7 +1495,7 @@ ul {
 }
 
 .x_slider_form_heading_wrapper {
-    background: #000044;
+    background: #78c157;
     width: 320px;
     position: absolute;
     top: 20px;
@@ -1509,7 +1509,7 @@ ul {
     position: absolute;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    border-left: 21px solid #000044;
+    border-left: 21px solid #78c157;
     right: -21px;
     top: 0px;
 }
@@ -1518,7 +1518,7 @@ ul {
     content: '';
     position: absolute;
     border-bottom: 17px solid transparent;
-    border-right: 19px solid #414bb9;
+    border-right: 19px solid #78c157;
     left: 0;
     bottom: -17px;
 }
@@ -2006,7 +2006,7 @@ html .ui-button.ui-state-disabled:active {
     height: 50px;
     line-height: 45px;
     text-align: center;
-    background: #000044;
+    background: #fcb939;
     color: #ffffff;
     border: 1px solid transparent;
     text-transform: uppercase;
